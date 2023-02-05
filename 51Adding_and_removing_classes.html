@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error{
+            padding: 10px;
+            color: crimson;
+            boorder: 10px dotted crimson;
+        }
+
+        .success{
+            padding: 10px;
+            color: limegreen;
+            border: limegreen;
+        }
+    </style>
+</head>
+<body>
+    <h1> Adding And Removing Classes </h1>
+
+    <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis cupiditate natus quibusdam aliquam 
+        laboriosam vel doloremque assumenda, recusandae libero deserunt nisi laudantium sit ratione pariatur at
+         tenetur exercitationem consequatur error?
+    </p>
+    
+</body>
+<script>
+    //
+    const content = document.querySelector('p');
+    console.log(content.classList);  //get classes name element has
+    content.classList.add('error'); //adding class of error to p tag and add is method of classlist
+    content.classList.remove('error'); //remove error class
+    content.classList.add('success');
+
+
+
+
+
+
+
+</script>
+</html>

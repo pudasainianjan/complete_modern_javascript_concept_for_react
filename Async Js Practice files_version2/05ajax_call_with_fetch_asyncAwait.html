@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>AJAX and API with async await</h1>
+<script>
+
+    /*WITH FETCH AND THEN ONLY*/
+    // function getWeather(woeid){ //woeid is where on earth  id
+    // fetch(`https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${woeid}/`)
+    // .then(result =>{
+    //     // console.log(result);
+    //     return result.json();       //it happens asynchronously so returns json
+    // })
+    // .then(data =>{
+    //     // console.log(data);
+    //     const today = data.consolidated_weather[0];
+    //     console.log(`Temperatures today in ${data.title} stay between ${today.min_temp} and ${today.max_temp} degree celcius`);
+
+    // })
+    // .catch(err=> console.log(err));
+    // }
+
+    // getWeather(2487956);
+    // getWeather(44418);
+    
+    /*ABOVE CODE IN ASYNC AWAIT*/       //also handling errors by wrapping in try catch
+
+    async function getWeatherAW(woeid){     //async always return a promise
+        try{
+            const result = await fetch(`https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${woeid}/`);
+            const data = await result.json();
+            const tommorow = data.consolidated_weather[1];
+            console.log(`Temperatures in ${data.title} stay between ${tommorow.min_temp} and ${tommorow.max_temp} degree celcius tommorow`);
+            return data;        //async should return the reeesolved value of the promise
+        }
+        catch(err){
+            console.error('couldnt fetch your data now ',err);
+        }
+        
+    }
+    getWeatherAW(2487956);
+    /*let dataLondon = getWeatherAW(44418);
+    console.log(dataLondon);     //this is pending because it happens async data comes back so we use then method  */
+    let dataLondon;
+     getWeatherAW(44418).then(data=> {
+         dataLondon= data;
+         console.log(dataLondon);
+     });
+     
+    
+
+</script> 
+</body>
+</html>

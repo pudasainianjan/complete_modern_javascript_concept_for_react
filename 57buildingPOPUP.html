@@ -1,0 +1,110 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            position: fixed;
+            top: 30%;
+            bottom: 30%;
+            left: 0;
+            width: 10vh;
+            display: block;
+            margin: 20px auto;
+            background: crimson;
+            color: white;
+            border: 0;
+            padding: 0px 2px;  /*topbottom leftright*/
+            /* border-radius: 20px;  */
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+        span{
+            word-wrap: break-word;
+            font-size: 20px;
+            width: 100%;
+        }
+        .popup-wrapper{
+            background: rgba(0,0,0,0.5);
+            position: fixed;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            display: none;
+        }
+        .popup{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            width: 100%;  /*for small screens*/
+            max-width: 300px;  /*for large screens*/
+            margin: 10% auto;
+            padding: 20px;
+            background: white;
+            border-radius: 20px;
+            position: relative;  
+        }
+
+        .popup a{
+            background: crimson;
+            color: white;
+            /* text-decoration: none; */
+            padding: 6px 10px;
+            border-radius: 20px;
+        }
+
+        .popup-close{
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            cursor: pointer;
+            font-size: 30px;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <button><span>click me for popup</span></button>
+    <div class="popup-wrapper">
+        <div class="popup">
+            <div class="popup-close">X</div>
+            <div class="popup-content">
+            <h2>Our Big Sale</h2>
+            <p>50% off in all produncts</p>
+            <a href="#">View Product</a>
+            </div>
+        </div>
+    </div>
+    
+</body>
+<script>
+    //
+    const button = document.querySelector('button');
+    const popup = document.querySelector('.popup-wrapper');
+
+    button.addEventListener('click', ()=>{
+        popup.style.display = 'block';
+    });
+
+    //closing popup
+    const close = document.querySelector('.popup-close');
+    close.addEventListener('click',()=>{
+        popup.style.display = 'none';
+    });
+
+    //when we click in black over popup close too
+    popup.addEventListener('click',()=>{
+        popup.style.display = 'none';
+    });
+
+
+
+
+
+
+
+
+</script>
+</html>

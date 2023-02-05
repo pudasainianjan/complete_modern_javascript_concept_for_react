@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    console.log(1);
+    console.log(2);
+    //fetch api
+    fetch('ram.json').then(response=>{  //if we change url, still resolves, so do check for response status code 
+        console.log('resolved ',response);
+        return response.json();
+    }).then(data=>{
+        console.log("data of ram: ",data);
+        fetch('shyam.json').then(response=>{
+            return response.json();
+        }).then(data=>{
+                console.log("data of shyam: ",data);
+                fetch('hari.json').then(response=>{
+                    return response.json();
+                }).then(data=>{
+                console.log("data of hari: ",data);
+                 });
+    })
+    })
+    
+    .catch(err=>{
+        console.log(err);
+    });
+
+    console.log(3);
+    console.log(4);
+
+</script>
+</html>

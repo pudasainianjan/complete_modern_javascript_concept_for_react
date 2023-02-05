@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>  Break and continue</h1>
+    
+</body>
+<script>
+    //break and continue
+
+    const scores = [50,25,0,30,100,20,10];
+
+    for(let i=0; i<scores.length;i++){
+
+        if(scores[i]===0){
+            continue;      //keyword   if zero we dont perform below if chcek and go back to the loop and start another iteration
+            //continue jumps out from this iteraion and goes back to the top and continue next iteraion
+        }
+        console.log('your score: ',scores[i]);
+        if(scores[i] ===100){
+            console.log('Congrats, you got the top score!');
+            break;    //when we get top score we dont want to travel anymore, no more iterations
+        }
+    }
+
+
+
+
+
+
+
+</script>
+</html>

@@ -1,0 +1,144 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Ingeritance in JS</h2>
+<script>
+    //subclasses can inherit functionality from other class and can also have their own additional properties or methods 
+    //subclass extends another class
+    //for example: an admin user class would have same methods and properties that a regular user would have and also have an extra method maybe like to delete users....
+    class User{
+        constructor(username,email){
+            this.username = username;
+            this.email = email;
+            this.score = 0;  
+        }
+
+        login(){
+            console.log(`${this.username} is logged in...`);
+            return this;
+        }
+        logout(){
+            console.log(`${this.username} is logged out...`);
+            return this;
+        }
+        increaseScoreByOne(){
+            this.score += 1;
+            console.log(`${this.username} has score ${this.score}`);
+            return this;
+        }
+        
+    }
+
+    
+
+    class Admin extends User{   //find the user class and inherit all stuffs there
+
+        //now we can define extra methods or properties inside this class that only admin has...
+        //if this class doesnot have constructor, it will automatically call the constructor of its parent i.e User3
+        deleteUser(user){
+            users = users.filter(u=> u.username !== user.username);
+        }
+    }
+
+    const userOne = new User('ram','r@gm.com');  
+    const userTwo = new User('hari','h@gm.com');
+    const userThree = new Admin('shaun','shaunAdmin@gmail.com');
+
+    console.log(userThree);
+    let users = [userOne,userTwo,userThree];
+    console.log(users);
+
+    userThree.deleteUser(userTwo);  //only admin can access this method
+    console.log(users);
+
+
+
+
+    //New example
+
+    //for ES5  --inheriting by subclass
+    var Person5 = function(name,yearOfBirth,job) {
+                this.name = name;
+                this.yearOfBirth = yearOfBirth;
+                this.job = job;
+            }
+
+           Person5.prototype.calculateAge= function() {
+                var age = new Date().getFullYear() - this.yearOfBirth;
+                console.log(age);
+            }
+    
+        
+
+        // const john6 = new Person6('john','1990','teacher');
+
+        var Athlete5 = function(name,yearOfBirth,job,olympicGames,medals){
+            //calling person5 to inherit
+            Person5.call(this, name,yearOfBirth,job);  //receive here
+            this.olympicGames = olympicGames;
+            this.medals = medals;
+        }
+
+        //for creating correct prototype chain
+        //lets give prototype of person to atlelete also
+        Athlete5.prototype = Object.create(Person5.prototype);  //do this first then only add methods to athelete allowed
+
+        Athlete5.prototype.wonMedal = 
+        function(){
+            this.medals++;
+            console.log('no of medals won is ',this.medals);
+        }
+
+        var johnAthlete5 = new Athlete5('john','1990','swimmer',3,10);
+
+        johnAthlete5.calculateAge();
+        johnAthlete5.wonMedal();
+
+
+        //for ES6  --inheriting by subclass
+        console.log('----------ES-6----------');
+
+        class Person6{      //superclass
+            constructor(name,yearOfBirth,job){
+                this.name = name;
+                this.yearOfBirth = yearOfBirth;
+                this.job = job;
+            }
+
+            calculateAge(){
+                var age = new Date().getFullYear() - this.yearOfBirth;
+                console.log(age);
+            }
+        }
+
+        class Athlete6 extends Person6{
+            constructor(name,yearOfBirth,job,olympicGames,medals){
+                super(name,yearOfBirth,job);  //this will auto take from super
+                this.olympicGames = olympicGames;
+                this.medals = medals;
+            }
+
+            wonMedal(){
+                this.medals++;
+                console.log(this.medals);
+            }
+        }
+
+        const johnAthlete6 = new Athlete6('john',1996,'swimmer',3,10);
+
+        johnAthlete6.calculateAge();
+        johnAthlete6.wonMedal();
+
+    
+
+
+
+
+</script>
+    
+</body>
+</html>

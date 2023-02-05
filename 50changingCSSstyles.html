@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="color: orange;"> Changing Css Styles </h1>
+    
+</body>
+<script>
+    //to add a new style  to already exixting style class
+    const title = document.querySelector('h1');
+
+    //title.setAttribute('style','margin: 500px;')   //this overrides previous style so we dont want this behaviour
+    //so we can use stype property
+    console.log(title.style);   //style is property of this element
+    console.log(title.style.color);  //returns current color
+    title.style.marginLeft = '1000px';  //added new property
+    title.style.color = 'crimson';
+    title.style.fontSize = '60px';
+    title.style.margin = '';  //removing that property -->margin gone
+
+
+
+
+
+
+
+</script>
+</html>

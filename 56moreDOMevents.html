@@ -1,0 +1,71 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            background: #eeeeee;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <p class="copy-me">try copying me in webpage</p>
+    <div class="box">move the mouse aroung this box</div>
+
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    
+    
+</body>
+<script>
+    //copy event
+    const copy = document.querySelector('.copy-me');
+    copy.addEventListener('copy',()=>{
+        alert("oi! mero note chorxas sale!!!");
+    });
+
+
+//mouse event
+const box = document.querySelector('.box');
+box.addEventListener('mousemove',e=>{
+    //console.log(e.offsetX,e.offsetY);  //offsetx = pixel position from x left and offsetY = y from top
+    box.textContent = `x position is - ${e.offsetX}  Y position is - ${e.offsetY}`;
+});
+
+
+//using scroll event
+document.addEventListener('wheel',e=>{  //when we scroll 
+console.table(e.pageX, e.pageY);  //it gives position of pixes our pointer is currently in
+
+});
+
+
+
+
+
+
+</script>
+</html>

@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="page-title"> Other Ways To Query DOM </h1>
+    <div>
+        <p>hello, world</p>
+        <p>lorem ipsum</p>
+        <p class="error">this is an error message</p>
+    </div>
+
+    <div class="error">this is an error in div</div>
+    
+</body>
+<script>
+    //some alternative ways to grab elements
+    //3 ways
+
+    //1-->get an element by ID
+    const title = document.getElementById('page-title')   //id is unique   //note we need # symbol if using querySelector to select an id
+    console.log(title);
+
+
+    //2-->get elements by their class name
+    const errors = document.getElementsByClassName('error')  //can grab multiple elements with multiple elements
+    console.log(errors);  // returns html collection 
+    console.log(errors[0]);
+    //but we cannot use foreach method here
+
+
+    //get elements by their tag name
+    const allPtags = document.getElementsByTagName('p');  //all the p tags grab
+    console.log(allPtags);
+    console.log(allPtags[2]);
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>

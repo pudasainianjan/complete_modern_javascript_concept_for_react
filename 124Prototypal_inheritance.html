@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Prototypal Inheritance</h2>
+    <!-- ! here admin is also a user and wants property of user -->
+    <!--? so how do we get access to user properties here because it is not using class or extending  here,so cant use super also -->
+    <!--todo: here we use class.call(contextOfUse,property,property) as shown in example below -->
+   
+</body>
+<script>
+    
+
+        function User(username,email){  
+            
+            this.username = username;
+            this.email = email;
+        }
+
+        User.prototype.login = function(){  
+                console.log(`${this.username} has logged in...`);  
+            };
+
+        function Admin(username,email,title){
+            User.call(this,username,email); //means pass this current object to user class and get back username and email attached to 'this'
+            this.title = title;  //additional prop of admin
+        }
+        //inheriting the methods on user prototype by Admin by copying the proto to admin proto to object
+        Admin.prototype = Object.create(User.prototype);  
+        //now admin has access to proto of user also for eg: userThree.login(); can be accessed plus it can add its own proto
+        Admin.prototype.deleteUser = function(){
+            console.log(`${this.title} can remove users`);
+        }
+        
+
+    
+
+    const userOne = new User('user1','ram@gmail.com');  
+    const userTwo = new User('user2','ramio@hotmail.com');
+    const userThree = new Admin('adminUser','admin@hotmail.com','maintainer');
+    console.log(userOne,userTwo);
+    userTwo.login();
+    userThree.login();
+    userThree.deleteUser();
+    
+
+
+
+
+
+      
+</script>
+</html>

@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Object And Classes</h2>
+<script>
+const userOne = {
+    username: 'ram',
+    login(){
+        console.log(this.username + " is logged in...");
+    }
+}
+userOne.login();
+
+//*if i wanted to create another user with same kind of properties...dont you think it would be redundant...for eg:
+const userTwo = {
+    username: 'shyam',
+    login(){
+        console.log(this.username + " is logged in...");
+    }
+}
+userTwo.login();
+
+//so obj literal method seems to be little boring here so we use class User and call it constructor 
+//eveerytime we create new user we call constructor for eg:
+const userThree = new User('sita');
+
+//every user created with User class would have the methods and properties class have
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

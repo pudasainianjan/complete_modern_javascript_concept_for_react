@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>  Returning Values</h1>
+    
+</body>
+<script>
+    let radius=6;
+    const calArea = function(radius){
+        console.log(radius);
+        // let area = 3.14 * radius ** 2;
+        // //console.log(area);    //only stored in locally ,not in memory anywhere  //only local var here so use return
+        // return area;  OR
+        return 3.14159265 * radius ** 2;  
+    };
+    
+
+    const area = calArea(radius);  //storing value
+    console.log(`Radius is ${radius}`,`Area of circle is ${area}`);
+
+    const calVolSphere = function(area,radius){
+        //4/3pi*r**3
+        return (4/3) * area * radius;
+
+    }
+    const volume= calVolSphere(area,radius);
+    console.log("Volume of Sphere is ",volume);
+    console.log('radius is',radius);
+
+
+
+
+
+
+
+
+
+</script>
+</html>

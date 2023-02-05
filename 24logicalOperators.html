@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> LOGICAL OPERATORS </h1>
+    
+</body>
+<script>
+    //LOGICAL OPERATORS  --> OR || and AND &&
+    const age = 25;
+    const password = "password@";
+
+    if(password.length>=6 && password.includes('@')){  //both needs to be true to satisfy condition
+        console.log("password is very strong and includes @!!!");
+    }
+    else{
+        console.log('either password is not 6 char long or Not includes @');
+    }
+
+    //LOGICAL NOT   !
+    if(age!=20){
+        console.log('you are not 20');
+    }
+
+    function myFalse(user){
+     if(user){
+         console.log('if im not in false, means i am in true ');
+     }
+     if(!user){
+         console.log('Oh! damn I entered in false if')
+     }
+     console.log(user);
+    }
+    myFalse(false);
+
+
+
+
+
+
+</script>
+</html>

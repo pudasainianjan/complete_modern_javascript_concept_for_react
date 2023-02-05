@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread /rest</title>
+</head>
+<body>
+  <h1>Spread and Rest</h1>
+<script>
+    
+    //REST PARAMETER (three dots in parameter)
+
+
+    //rest allows us to bundle up the argumeent inside a function into a single array parameter
+    /*const double = (num1,num2,num3) => {   //heere we may not know how many parameteers we are going to need so we usee rest here
+        //so something 
+    }*/
+    const double = (...nums) =>{    //take all arguments and bundle up them into a single array parameter
+    console.log(nums);  //array of arguments
+    return nums.map(num => num*2);
+
+    };
+
+    const result = double(1,2,3,4,5);
+    console.log(result);
+
+    //SPREEAD SYNTAX(ARRAY)  -->unpacks into individuak components
+
+
+    const people = ['ram','sita','hari'];
+    console.log(...people);  //spreads each array to indiviaul component  --> no longer inside an array 
+
+    //when we want to take elements of one array and spread them into thee new array
+    const members = ['geeeta','mario',...people];
+    console.log(members);
+
+    //SPREAD SYNTAX(OBJECTS)
+
+
+    const person  = { name: 'ram', age:30 };
+    //if i want to clone this peerson then assigning like below: would not create new object but just points to it
+    // const personClone = person;
+    //so what we could do is make brand new object
+    const personClone = {...person,location:'ktm'};    //this is sepatate object and we can also add new property
+    console.log(personClone);
+
+            
+
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Query Selector </h1>
+    <div>
+        <p>hello, world</p>
+        <p>lorem ipsum</p>
+        <p class="error">this is an error message</p>
+    </div>
+
+    <div class="error">this is an error in div</div>
+    
+</body>
+<script>
+    //two best methods to select a document:
+    //querySelector
+    //querySelectorAll
+
+    
+    const paragraph = document.querySelector('p')   //goes into the document and grabs the first p tag and ignores the rest of them
+    const thirdParagraph = document.querySelector('.error');
+    const divError = document.querySelector('div.error');
+    console.log(paragraph);
+    console.log(thirdParagraph);
+    console.log(divError);
+
+    //to grab multiple elements
+    const allParagraphs = document.querySelectorAll('p');   //can select all of the p tag
+    console.log(allParagraphs);  //returns nodelist like array but we cant use all array methods here
+    //but we can use square bracket notation
+    console.log(allParagraphs[2])  //third p is given
+    //we can also use foreach
+    allParagraphs.forEach(paragraph=>{
+        console.log(paragraph);
+    });
+
+
+    const errors = document.querySelectorAll('.error');
+    console.log(errors);
+    
+
+
+
+
+
+
+
+
+</script>
+</html>

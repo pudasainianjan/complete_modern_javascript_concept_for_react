@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Async And Await</h1>
+</body>
+<script>
+    // async and await removes the problem of using messy then and promises
+    //it makes promises even more clean and organised 
+    //async is async. function that returns promises
+    //await waits until data is fetched and makes it synchronous inside async block
+    
+    
+    const getTodos = async () =>{
+        const response = await fetch('https://jsonplaceholder.typicode.com/todos');
+        //but async will still try to give response if url is broken or not working, so we use error throwing and catching
+        //so if url is not working we dont want to run below response.json() statement
+        if(response.status !== 200){
+            throw new Error('could not fetch from the url');
+            //if error wont run below,but catch error directly
+        }
+        const data = await response.json();
+        return data;
+    };
+
+    getTodos().then(data=> console.log("resolved: ",data))
+    .catch(err=> console.log("rejected: ",err.message));
+</script>
+</html>

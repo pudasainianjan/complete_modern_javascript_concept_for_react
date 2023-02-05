@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Parents,Children and Siblings Relationship </h1>
+
+    <article>
+        <h2>article title</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <div>written by anjan pudasaini</div>
+    </article>
+    
+</body>
+<script>
+    //there are two relationships: parent-child relationship and sibling relationship
+    const article = document.querySelector('article');
+
+    //1--->PARENT CHILD RELATIONSHSIP
+
+    //using children property
+    console.log(article.children);
+    //as we cant use foreach on html collection we take this out and convert into an array
+    console.log(Array.from(article.children));  //converts html collection to array
+
+    Array.from(article.children).forEach(child=>{
+        child.classList.add('article-element');
+    });
+
+    //parentElement property
+
+    const title = document.querySelector('h2');
+    console.log(title.parentElement); //article is parent of h2
+    console.log(title.parentElement.parentElement); //parent of parent articles parent is body
+    
+    //2--->SIBLING RELATIONSHSIP
+    console.log(title.nextElementSibling); //next p tag is given
+    console.log(title.previousElementSibling);  //null because its the first
+
+
+
+    //CHAINNING
+    console.log(title.nextElementSibling.parentElement.children);
+
+
+
+
+
+</script>
+</html>

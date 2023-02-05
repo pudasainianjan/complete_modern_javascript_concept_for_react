@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Creating Object Literal </h1>
+    
+</body>
+<script>
+    //object has huge power
+    /* INTRODUCTION TO OBJECT
+    object in real life have properties color size model  
+    eg: phone object: prooperties: color,size,model,etc also has things it can do, it can ring, take picture, play music
+    user object: email,usermane,gender   and things it can do is simply METHODS(eg:login,logout)
+    blog object: properties: title,content,author  and Methods(things it can do) : publish, unpublish,delete
+    js also has some built in objects such as day object, math object,etc
+    */
+
+    //OBJECT LITERAL NOTATION -->for creating objects
+    let user =  {
+        name : 'Crystal',   //key: 'value' -->one of the property of user object
+        age: 30,
+        email: 'crystal@gmail.com',
+        location: 'france',
+        blogs: ['10 things to do in life','how to make tea']
+    };
+
+    console.log(user);
+    console.log(user.name);  //accessing property
+    user.age= 35;
+    console.log(user.age);
+    //also square bracket can be used instead of dot to access properties
+    console.log(user['name']);
+    console.log(user['email']);
+    console.log('Previous Name: ',user['name']);
+    user['name'] = 'chau chau';
+    //console.log('lastest name: ',user[name]);  wrong one use double comma
+    console.log('Previous Name: ',user['name']);
+
+    //generally dot notaion is easy to use but when we want to pass some variables then use bracket one for eg:
+    const key = 'location';
+    console.log(user[key]);  //same as doing user['location']
+
+    //TYPE OF OPERATOR -->for showing type of obj properties
+    console.log('The datatype of user is:' ,typeof user);
+
+
+
+
+
+
+
+</script>
+</html>

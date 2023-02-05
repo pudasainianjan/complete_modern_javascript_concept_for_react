@@ -1,0 +1,69 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    class User{
+        constructor(username,email){
+            this.username = username;
+            this.email = email;
+            this.score = 0;  //everyone has score 0 at first
+        }
+
+        login(){
+            console.log(`${this.username} is logged in...`);
+            return this;
+        }
+        logout(){
+            console.log(`${this.username} is logged out...`);
+            return this;
+        }
+        increaseScoreByOne(){
+            this.score += 1;
+            console.log(`${this.username} has score ${this.score}`);
+            return this;
+        }
+        
+    }
+
+    const userOne = new User('ram','r@gm.com');  //instance of class
+    const userTwo = new User('hari','h@gm.com');
+
+    userTwo.increaseScoreByOne();
+    userTwo.increaseScoreByOne();
+    console.log(userTwo.score);  //2
+
+    // console.log(userTwo.login().logout());   //we cannot chain because we have not explicitly returned anything in login(), so function with no return returns undefined ...so we cannot apply logout() on undefined
+    //to solve this we return this to all our methods and chain them
+
+    console.log(userTwo.login().logout().increaseScoreByOne());  //as we have returned 'this', we can now chain methods
+
+    //NOTE: if not returned anything, function returns undefined as a default
+
+    // EG..2
+    class Person6 {
+            constructor(name,yearOfBirth,job){
+                this.name = name;
+                this.yearOfBirth = yearOfBirth;
+                this.job = job;
+            }
+
+            calculateAge(){
+                var age = new Date().getFullYear() - this.yearOfBirth;
+                console.log(age);
+            }
+            static greeting(){      //this is static method of class
+                console.log('hey theree');
+            }
+        }
+
+        const john6 = new Person6('john','1990','teacher');
+
+        Person6.greeting();  //calling static method
+
+</script>
+</body>
+</html>

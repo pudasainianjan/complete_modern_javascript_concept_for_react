@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Prototype Model</h2>
+    <!--! defining methods inside the constroctors is not the best way to add them-->
+    <!-- ? because everytime inatance is created they create copy of all methods with them instead of pointing the same method one classes or user -->
+    <!--* so we create protorype of particular class or constructor so that every instancecs will share one copy of common methods -->
+    <!-- * all methods are available inside proto property and every obj in js has prototype for ge: the proto property for an array object will point to array prototype(methods)-->
+    <!-- todo: so we create define our methods inside proto insted of directly putting it to classes or constructor -->
+</body>
+<script>
+    
+
+        function User(username,email){  
+            //set properties on the object
+            this.username = username;
+            this.email = email;
+        }
+
+        User.prototype.login = function(){  //now all user instances will share this proto
+                console.log(`${this.username} has logged in...`);  //here 'this' will point to the object from which it is called
+            }
+
+    
+
+    const userOne = new User('user1','ram@gmail.com');  
+    const userTwo = new User('user2','ramio@hotmail.com');
+    console.log(userOne,userTwo);
+    userTwo.login();
+
+
+
+
+
+      
+</script>
+</html>

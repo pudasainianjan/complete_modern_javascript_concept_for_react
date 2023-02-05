@@ -1,0 +1,56 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Strings</h1>
+</body>
+<script>
+
+    //strings....
+    console.log("hello ,world");
+    let email = 'anjan@gmail.com';
+    console.log(email);
+
+    //string concatenation
+    let firstName = 'Brandon';
+    let lastName = 'Stark';
+    let fullNmae = firstName + ' ' + lastName;  //with space also 
+    console.log(fullNmae);
+
+    //getting characters
+    console.log(fullNmae[0]);   //first character of string 
+    console.log(fullNmae[3]);   //first character of string 
+
+
+
+    //string length
+    console.log(lastName.length); //.length is not a function but just a property of a string so .length only
+
+    //string methods
+    /*NOTE: method is just a fnx associated with particular object or datatype whereas function is snippet of code which performs some kind of specific task */
+    console.log(fullNmae.toUpperCase());  //toUpperCase is method name so () is also given
+    let result = fullNmae.toLocaleLowerCase();
+    console.log(result, fullNmae);
+
+    let index = email.indexOf('@')  //finds the index of certain character inside the string and return that value
+    console.log("index of @ in email is" + " " + index);  //index starts from zero 
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</html>

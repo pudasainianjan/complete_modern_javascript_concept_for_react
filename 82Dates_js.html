@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center;"> Dates In Javascript </h1>
+    
+</body>
+<script>
+    //dates in js fall on the object data type so they are objects which means that they are reference types
+    //we use constructors of js to create date object
+    const now = new Date();   //it is calling a constructor function to create this object
+    //new keyword means we want new object of this datatype
+
+    console.log(now);
+    console.log(typeof now); //object
+
+    //Date object comes with different methods
+    
+    //year,months,day,times
+    console.log('getFullYear: ', now.getFullYear()); //extracts 2020 from date obj
+    console.log('getMonth: ', now.getMonth());  //jan-0 feb-2 and so on... 
+    console.log('getDate ', now.getDate());  //1-30
+    console.log('getDay ', now.getDay());  //0-6
+    console.log('getHours ', now.getMinutes());  
+    console.log('getMinutes', now.getMinutes());
+    console.log('getSeconds', now.getSeconds());
+    console.log('getMilliseconds', now.getMilliseconds()); 
+
+
+    //timestamps   -->number of milliseconds since 1st january , 1970
+    console.log('timestamp: ',now.getTime());  //gigantic number of miiliseconds since 1 jan , 1970
+    console.log(now.toDateString());  //short date in string
+    console.log(now.toTimeString());
+    console.log(now.toLocaleString());
+
+
+
+
+
+
+
+</script>
+</html>

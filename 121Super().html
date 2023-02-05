@@ -1,0 +1,70 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Super()</h2>
+    <p>What is we want to give extra property to subclass class</p>
+    <!--! when we add constructor to subclass, constructor of subclass will be called... so we need some way to access properties of parent(ie user)  -->
+    <!--* So we must add super() inside Admin class constructor with argument same as proeprty of parent if we have constructor in sub class  -->
+<script>
+
+    class User{
+        constructor(username,email){
+            this.username = username;
+            this.email = email;
+            this.score = 0;  
+        }
+
+        login(){
+            console.log(`${this.username} is logged in...`);
+            return this;
+        }
+        logout(){
+            console.log(`${this.username} is logged out...`);
+            return this;
+        }
+        increaseScoreByOne(){
+            this.score += 1;
+            console.log(`${this.username} has score ${this.score}`);
+            return this;
+        }
+        
+    }
+
+    
+
+    class Admin extends User{  
+        
+        constructor(username,email,title){
+            super(username,email,score);  //gets these properties from parent class
+            this.title = title;  //extra property of admin
+        }
+
+        deleteUser(user){
+            users = users.filter(u=> u.username !== user.username);
+        }
+    }
+
+    const userOne = new User('ram','r@gm.com');  
+    const userTwo = new User('hari','h@gm.com');
+    const userThree = new Admin('shaun','shaunAdmin@gmail.com','programmer');
+
+    console.log(userThree);
+    let users = [userOne,userTwo,userThree];
+    console.log(users);
+
+    userThree.deleteUser(userTwo);  
+    console.log(users);
+
+    
+
+
+
+
+</script>
+    
+</body>
+</html>

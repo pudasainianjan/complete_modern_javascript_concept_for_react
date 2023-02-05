@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center;"> Date FNS Library In Javascript </h1>
+    <a href="https://date-fns.org" target="_blank">Visit Library</a>
+
+    <script src="http://cdn.date-fns.org/v1.9.0/date_fns.min.js"></script>
+    <script>
+        //
+        const now = new Date();
+        //console.log(dateFns.isToday(now));  //returns true
+
+        //formatting opritons
+        console.log(dateFns.format(now,'YYYY')); //gives current year
+        console.log(dateFns.format(now,'MMMM'));  //gives current month in Word
+        console.log(dateFns.format(now,'MMM'));  //gives current month but shorter one
+        console.log(dateFns.format(now,'dddd'));  //gives current day in Word
+        console.log(dateFns.format(now,'Do'));  //gives current date eg:17th
+        console.log(dateFns.format(now,'dddd,Do,MMMM,YYYY'));  //gives current day in Word
+
+
+        //COMAPARING DATES
+        const before = new Date('February 1 2019 12:00:00');
+
+        console.log(dateFns.distanceInWords(now, before));  //searcch distanceinWords in website to know more
+        console.log(dateFns.distanceInWords(now, before,{addSuffix: true}));  //adds ago in last
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    </script>
+</body>
+</html>

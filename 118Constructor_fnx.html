@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Constructor Function</h2>
+</body>
+<script>
+    class User{
+        //constructor function constructs object and sets the properties on it
+
+        constructor(username,email){  //shorthand syntax for a function
+            //set properties on the object
+            this.username = username;
+            this.email = email;
+
+        }
+
+    }
+//creating unique objects using User constructors and passing in values
+//Note: whenever we creating object, we can say we are creating instance of the user class, instance is individual objects we create using the class
+    const userOne = new User('ram','ram@gmail.com');  //this calls the constructor function inside user class to set all the properties on that new user object
+    const userTwo = new User('ramio','ramio@hotmail.com');
+    console.log(userOne,userTwo);
+
+    //the 'new' keyword
+     // 1 --> it creates a new empty object {}
+     // 1 --> it binds the value of 'this' to the new empty object
+     // 1 --> it calls the constructor function to 'build' the object
+
+
+
+      
+</script>
+</html>

@@ -1,0 +1,36 @@
+.tabs > ul{     /*all ul tags inside tabs*/
+    padding: 0;
+  }
+  .tabs .trigger{   /*all the triggers*/
+    list-style-type: none;
+    padding: 10px;
+    background: #f2f2f2;
+    margin: 4px;
+    border-radius: 6px;
+    display: inline-block;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  .tabs .trigger.active{        /*?when a trigger is active*/
+    background: #ff6565;
+    color: white;
+  }
+  .tabs .content{
+    max-width: 100%;
+    padding: 1rem 0 1rem 1rem;
+    background-color: #d6e1e9;
+    border: .1rem solid #eee;
+    border-radius: 1.5rem;
+    font-size: 1.6rem;
+    text-align: start;
+    display: none;
+  }
+  .tabs .content.active{    
+    display: block;
+    animation: slide-down .4s ease-out;
+  }
+
+  @keyframes slide-down {
+    0% { opacity: 0; transform: translateY(100%); }
+    100% { opacity: 1; transform: translateY(0); }
+}

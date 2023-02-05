@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center;"> Async in Js DEMO  </h1>
+    
+</body>
+<script>
+    //demo
+    //generally js is synchronous nature means that it can run one code,complete it then only move to other 
+    //here performance may degrade so we use asynchronous js to make it run asynchronously
+    console.log(1);
+    console.log(2);
+
+    setTimeout(()=>{ //it doesnt block the code as synchronous
+
+        console.log(3,'async');//callback function fired after 3 seconds 
+        
+    },3000)  //wait three seconds
+    
+    console.log(4);
+    console.log(5);
+
+
+
+
+
+
+
+</script>
+</html>

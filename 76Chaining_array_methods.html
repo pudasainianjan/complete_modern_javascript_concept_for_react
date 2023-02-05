@@ -1,0 +1,43 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center;"> CHAINING ARRAY METHODS </h1>
+    
+</body>
+<script>
+    //chainning array methods
+    const products = [
+        {name: 'gold star', price:30},
+        {name: 'green shell', price:10},
+        {name: 'red shell', price:40},
+        {name: 'banana skin', price:5},
+        {name: 'mushroom', price:50},
+    ];
+
+    const filtered = products.filter(product => product.price>20);  //if true kept inside filtered
+
+    const promos = filtered.map(product =>{
+        return `OFFER!!The ${product.name} is ${product.price / 2} `;  //these are sale products
+    });
+
+    console.log(promos);
+
+    //so quick way to achive above is METHOD CHAINING
+    const promos1 = products.filter(product => product.price > 20).map(product => `OFFER!!The ${product.name} is ${product.price / 2} `);
+    //this does exactly same but we have chained method which is good practice
+    console.log('Chained One: ', promos1);
+
+
+
+
+
+
+
+
+</script>
+</html>

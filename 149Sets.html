@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sets</title>
+</head>
+<body>
+<script>
+
+    //SETS  -->new data structure in the obj category  (reference types)        (no duplicates)
+
+    //allows us to store a list of any kind of unique values(dont allow duplicates)
+    //like a array but unlike an array it cannot contain duplicates
+    const namesArray = ['ram','hari','sita','ram'];
+    console.log(namesArray);        //array allows duplicates 
+
+    const nameSet = new Set(namesArray);        //passing array in set constructor
+    console.log(nameSet); //duplicate is deleted as set dont allow duplicates 
+
+    const uniqueNames = [...nameSet];  //spreading set valuee to array
+    console.log(uniqueNames);   //array of unique names
+
+    // const uniqueNames1 = [...new Set(namesArray)]; //short way
+    // console.log('hello',uniqueNames1);
+
+    //though set is like array wee cant use some methods like push,length, rather we use different add() or size()
+
+    const ages = new Set();  //empty set
+    ages.add(20);
+    ages.add(40).add(25);   //chainable methods
+    ages.delete(25);
+
+    console.log(ages,ages.size);
+    console.log(ages.has(30)); //false
+    console.log(ages.has(40)); //true
+    ages.clear();  //removes all the values from the set
+    console.log(ages);
+
+
+    //SETS ARE ITERABLE 
+    const names = new Set([
+        {name:'abc',age:20},
+        {name:'ram',age:30}
+
+    ]);
+    names.forEach(name =>{
+        console.log(name.name,name.age);
+    });
+
+
+</script>
+    
+</body>
+</html>

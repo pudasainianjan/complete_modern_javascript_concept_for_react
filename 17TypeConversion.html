@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>  Type Conversion</h1>
+    
+</body>
+<script>
+    //type conversion 
+    let score = '100';  //it is string here
+    console.log(score+1);  //js concatinates 1 with string 100 so,1001
+    //so to solve this problem 
+    score = Number(score);
+    console.log(score + 1);
+
+    console.log(typeof score);  //checking type score is number
+
+    //now converting number to string
+    let result = String(score);
+    console.log('Result type is ',typeof result);  //checking type result is string now
+
+    //BOOLEAN
+    let booleanDemo = Boolean(100); //+ve and -ve are truty values
+    let booleanDemo1 = Boolean(0); //zero is falsy value
+    console.log(booleanDemo);
+    console.log(booleanDemo1);
+    let myStringConverted = Boolean('hello');
+    console.log(myStringConverted);  //true for string
+
+    //NOTE :
+    /* All above are explicitly type conversion 
+    wehresas == auto converts into other type to compare which is implicitly type conversion */
+
+
+
+
+
+
+
+
+
+</script>
+</html>

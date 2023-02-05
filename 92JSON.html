@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center;"> JOSN DATA </h1>
+    
+</body>
+<script>
+    //json is a data format which most api return when we make request
+    //looks like array with javascript objects but it is just a string formatted into looking like js objects
+    //done in text format
+    //now we will convert response and turn it into js array of objects
+
+    const getTodos = (callback) =>{
+
+        
+const request = new XMLHttpRequest();
+
+request.addEventListener('readystatechange',()=>{
+    
+    if(request.readyState === 4 && request.status === 200){  //only fires when readystate is 4 and get okay response
+        const data = JSON.parse(request.responseText);   //converts json string into js object inside array
+        callback(undefined,data);  //now data is array of objects
+    }
+    else if(request.readyState === 4){
+        callback('Could not fetch data',undefined);
+    }
+});
+
+//request.open('GET','https://jsonplaceholder.typicode.com/todos/'); //fetching from web
+request.open('GET','92making_JSON.json'); //fetching from our local json
+request.send();
+};
+
+console.log(1);
+console.log(2);
+
+getTodos((err,data) => {  //error first data second   //CALLBACK FIRES ONCE COMPLETELY MEANING START NOW AND FINISH LATER ASYNC
+    console.log('callback fired');
+    //console.log(err,data);
+    if(err){
+        console.log(err);
+    }
+    else{
+        console.log(data);
+    }
+});
+console.log(3);
+console.log(4);
+
+
+
+
+
+
+
+</script>
+</html>

@@ -1,0 +1,93 @@
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            body{
+                background: #eeeeee;
+            }
+            form{
+                max-width: 200px;
+                margin: 40px auto;
+                background: white;
+                padding: 20px;
+                border: 3px solid thistle;
+            }
+
+            input{
+                display: block;
+                margin: 10px auto;
+                padding: 8px;
+                border: 3px dotted #eee;
+                margin-bottom: 30px;
+                
+            }
+            .success{
+                border: 5px solid green;
+            }
+            .error{
+                border: 5px solid crimson;
+            }
+        </style>
+    </head>
+    <body>
+        <h3 style="text-align: center;"> Using Regular Expressions to Validate forms(matching patterns) </h3>
+        <form class="signup-form">
+            <input type="text" id="username" placeholder="username">
+            <input type="submit" value="submitted">
+            <div class="feedback"></div>
+        </form>
+        
+    </body>
+    <script>
+        //
+        const form = document.querySelector('.signup-form');
+        const feedback = document.querySelector('.feedback');
+        const usernamePattern = /^[a-zA-Z]{6,12}$/  //lowercase,uppercase and length
+        
+        form.addEventListener('submit',e=>{
+            e.preventDefault();   //prevents the default refresing action
+            //validation
+            const username = form.username.value;
+            if(usernamePattern.test(username)){
+                //feedback good info
+                feedback.textContent = 'that username is valid!';
+
+            }else{
+                //feedback help info
+                feedback.textContent = 'username must contain letters only & be between 6 and 12 characters long';
+            }
+        });
+
+        //for the live feedback -->using keyup event
+        form.username.addEventListener('keyup', e=>{
+            // console.log(e.ctrlKey);
+            // if(e.ctrlKey){
+            //     alert('you pressed ctrl key, yeah!');
+            // }
+           // console.log(e.target.value);   //both gives us the same value
+           
+           if(usernamePattern.test(e.target.value)){ 
+               console.log('passed');
+               e.target.setAttribute('class','success');
+           }
+           else{
+               console.log('failed');
+               e.target.setAttribute('class','error');
+
+           }
+            
+        });
+        
+
+    
+    
+    
+    
+    
+    
+    
+    </script>
+    </html>

@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>  Function Declaration And Expressions </h1>
+    
+</body>
+<script>
+    //function is the object data type in javascript
+    //function declaration
+
+    function greet(greet){
+        console.log(greet)
+    }
+    greet("hello there!");  //invoking or calling the function
+
+
+    //function expression
+    //we can also store functions in a variables and call
+    const speak = function(time,name){    //this is function expression    //here greet is function parameter
+        console.log(`good ${time} ${name}`); 
+
+    };   //semicolon because it is expression
+    speak('morning','mario');    //giving arguments
+    speak('day','ram');
+
+
+    //what if nothing parameter?
+    //-->it shows undefined so we give default values to parameters
+
+    const speak1 = function(time='night',name='hari'){    //giving default value if argument not passed
+        console.log(`good ${time} ${name}`); 
+
+    };   //semicolon because it is expression
+    speak1('morning','mario');    //giving arguments
+    speak1('day','ram');
+    speak1();
+
+    
+
+
+
+
+
+
+
+</script>
+</html>

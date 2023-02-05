@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>AJAX and API</h1>
+<script>
+    function getWeather(woeid){ //woeid is where on earth  id
+    fetch(`https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${woeid}/`)
+    .then(result =>{
+        // console.log(result);
+        return result.json();       //it happens asynchronously so returns json
+    })
+    .then(data =>{
+        // console.log(data);
+        const today = data.consolidated_weather[0];
+        console.log(`Temperatures in ${data.title} stay between ${today.min_temp} and ${today.max_temp} degree celcius`);
+
+    })
+    .catch(err=> console.log(err));
+    }
+
+    getWeather(2487956);
+    getWeather(44418);
+    
+    
+
+</script> 
+</body>
+</html>

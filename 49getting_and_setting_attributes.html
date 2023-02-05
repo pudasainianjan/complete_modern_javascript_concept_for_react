@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Getting and setting attributes </h1>
+
+    <a href="https://www.goolge.com">Link to somewhere cool...</a>
+
+    <p class="error">lorem ipsum</p>
+    
+</body>
+<script>
+    const link = document.querySelector('a');
+    console.log(link.getAttribute('href'));  //gives value of href attribure
+    link.setAttribute('href','https://www.facebook.com');    //takes 2 argument -->eg: change href to facebook.com
+    link.innerText = 'The facebook Website';
+
+    const msg = document.querySelector('p');
+    console.log(msg.getAttribute('class'));
+    msg.setAttribute('class','success');  //now class cahnged from error to success
+
+    //we can also set an attribute to an html element that doesnt already existes also
+    msg.setAttribute('style','color:green;');  //style is added to the first p tag
+
+
+
+
+
+
+
+</script>
+</html>

@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center;"> Find Method(array) </h1>
+    
+</body>
+<script>
+    //FIND METHOD  --> // it returns first value inside an array which passes certain condition
+    //returns the value of the first element inside an array that passes a certain test in a callback function
+
+    //EXAMPLE 1
+    const scores = [10,59,0,40,60,10,20,70];
+    //if we want to find the first score that is over fifty
+    //as soon as it finds over fifty and returm that value and rest looping stops
+
+    const firstHighScore = scores.find((score)=>{
+        return score > 50;    //return true when score is over fifty
+    })
+
+    console.log('First high score is ',firstHighScore);  //returns sixty
+   
+
+
+
+
+
+
+
+</script>
+</html>

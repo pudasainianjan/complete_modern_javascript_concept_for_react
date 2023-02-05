@@ -1,0 +1,78 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li{
+            list-style-type: none;
+            max-width: 200px;
+            padding: 8px;
+            margin: 8px auto;
+            background: #eee;
+            border: 1px dotted #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>  TODOS </h1>
+    <ul>
+        <li>buy milk</li>
+        <li>read a book</li>
+        <li>play the guitar</li>
+        <li>pay the bills</li>
+    </ul>
+
+    <button>Add New To Do</button>
+    
+</body>
+<script>
+    
+    const button = document.querySelector('button');
+    const ul = document.querySelector('ul');
+    //54 removing and creating elements
+    //ul.remove();  //takes emement out of the webpage
+
+    //listens to click event and fires a callback function
+    button.addEventListener('click', ()=>{  //actively listens to certain events on this button  ('event-type',callbackfunction)
+    //console.log('You clicked me!!');
+    //ul.innerHTML += '<li>Something New</li>';
+    const li = document.createElement('li') //method on doc. obj to create a new html element
+    li.textContent = 'something new to do';
+    ul.append(li);  //put it at the bottom of parent
+    ul.prepend(li);  //pu it at the top of parent
+    });
+     
+
+    // const items = document.querySelectorAll('li');
+    // items.forEach(item=>{
+    //     item.addEventListener('click', event=>{
+    //         console.log('event in LI');
+    //         event.stopPropagation()  //stops the event bubbling up from this point
+    //         //console.log("item is clicked!!!",event);
+    //         //console.log(event.target);  //returns the item with tag
+    //         //console.log(item);  //does same as event.target
+    //         //event.target.style.textDecoration = 'line-through';
+    //         event.target.remove();  //same as tag.remove
+    //     });
+    // });   //instead of selecting each li we can use below code:
+
+    ul.addEventListener('click', e=>{
+        //console.log('event in UL');
+        //console.log(e.target);
+        if(e.target.tagName === 'LI'){
+            console.log(e.target);  //e.target has value of particular event elemtnt tags 
+            e.target.remove();
+        }
+    });
+    
+
+
+
+
+
+
+
+
+</script>
+</html>

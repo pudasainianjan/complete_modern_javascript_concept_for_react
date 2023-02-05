@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center;">  SORT METHOD (ARRAY)</h1>
+    
+</body>
+<script>
+    //example 1  --sorting strings
+    const names = ['mario','shaun','chun-li','yoshi','luigi'];
+
+    names.sort();  //unlike the other array methods ,this is destructive
+    names.reverse(); //opposite of sort NOTE! if you want alphabetical order reverse then use sort() also
+    console.log(names);  //now ordered alphabetically order 
+
+    //examples 2 --> sorting numbers
+    const scores = [10,59,0,40,60,3,10,20,70];  //PROBLEM!!--> its only seeing first numbers like in 10,3,25 sorting is 1,25,3 
+
+    scores.sort();
+   // scores.reverse();
+   //scores.sort((a,b)=> b - a)  //biggest first (nice way) and solves above problem
+    console.log(scores);  //lowest to highest
+
+
+//EXAMPLE 2
+
+    const players = [
+        {name:'mario', score:20},
+        {name:'luigi', score:10},
+        {name:'chun-li', score:50},
+        {name:'yoshi', score:30},
+        {name:'shaun', score:70},
+    ];
+
+    //complex objects dont know what to sort , so normal sort() wont work 
+    //so we have to provide a function as an argument to sort function (compare function)
+    players.sort((a,b)=>{  //a and b are two consecutive elements inside the array
+        if(a.score > b.score){
+            return -1;  //ewe want a to come first, so we return neg number
+        }
+        else if(b.score > a.score){
+            return 1;  //means b will come first we return plus integer means b will be switched first 
+        }
+        else{
+            return 0; //no reordering is needed
+        }
+    });
+
+    console.log('sorted players ',players);
+
+
+    //but there is shorter version of above
+    players.sort((a,b)=> b.score - a.score)  //if b.score is greater than a.score , then we will get a positive number and b will come first and vice versa
+    console.log(players);
+
+
+
+
+
+</script>
+</html>

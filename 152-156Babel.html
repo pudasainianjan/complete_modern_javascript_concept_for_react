@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Babel</title>
+</head>
+<body>
+<script>
+//BABEL     -->converts modern code to old any browser supported equivlent code
+    //all/old browsers may not support new features and codes like internt explorer may not support arrow functions
+    //for eg: babel may convert const in our code to var for internet explorer...
+    //to use babel, we need to install node js and npm and install babel package
+
+
+    //go to inside project folder(terminal)
+    -->npm init  //initialize package.json file which keeps track of all libraries and packages used in project
+    --> npm install @babel/core @babel/cli --save-dev
+    //babel cli is just for using some babel commands
+    //installing two packages babel core and cli
+    //--save-dev means saving in developer dependencies in package.json file
+    //node-modules: floder that contains all codes for whaeveer package installed in project
+    
+    -->npm install @babel/preset-env --save-dev     //preset allows us to use all of the latest js features 
+
+    //now we installed babel preset, now we have to define the preset in a new file called .babelrc
+    //now create new file inside project
+    // project>.babelrc   (in same placee where node modules is...)
+    //INSIDE .babelrc file:
+    /*
+    {
+        "presets": ["@babel/preset-env"]    //now babel uses this preeset 
+    }
+    */
+
+    //now we need tO convert modern code to older using babel cli
+    //to use that babel command, we first need to access babel cli which is inside the node_modules>.bin>babel...
+    //code
+    node_modules/.bin/babel before.js -o after.js   //this maens output before.js code to after.js file...
+
+    //note: put your modern code in src folder and converted code in dist folder eg: dist>asset>converted.js
+
+    //every time we enter above command, so put it in package.json for shortcut
+    now inside scripts, put "babel":"node_modules/.bin/babel before.js -o after.js"
+    //now we can run script by npm run babel
+
+    running script again again and agian may be tedious so we can add -w flag inside script to watch changes....
+    "babel":"node_modules/.bin/babel before.js -w -o after.js"
+
+
+
+
+
+</script>
+    
+</body>
+</html>

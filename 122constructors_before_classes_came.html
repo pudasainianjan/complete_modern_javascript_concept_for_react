@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Constructor Function</h2>
+    <!--* before classes were introduced in js we used to create constructor inside function as shown below-->
+    <!-- ! below code is same as user class with constructor -->
+
+</body>
+<script>
+    
+
+        function User(username,email){  
+            //set properties on the object
+            this.username = username;
+            this.email = email;
+
+            this.login = function(){  //this refers to the obj instance here also
+                console.log(`${this.username} has logged in...`);
+            }
+        }
+
+    
+
+    const userOne = new User('user1','ram@gmail.com');  
+    const userTwo = new User('user2','ramio@hotmail.com');
+    console.log(userOne,userTwo);
+    userTwo.login();
+
+    //the 'new' keyword works same way as in classes 
+     // 1 --> it creates a new empty object {}
+     // 1 --> it binds the value of 'this' to the new empty object
+     // 1 --> it calls the constructor function to 'build' the object
+
+
+
+      
+</script>
+</html>

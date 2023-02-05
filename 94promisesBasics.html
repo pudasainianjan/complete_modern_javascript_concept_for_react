@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center;"> PROMISES BASICS </h1>
+    
+</body>
+<script>
+    
+    //promise example
+
+    const getSomething = () => {
+        return new Promise((resolve,reject)=>{   //we auto get access to 2 parameters functions and built into the promise api in javascript
+        //we return new promise and leads one or two outcomes either promise is Resolved or Rejected...resolved means we get the data we want
+        //fetch something
+        resolve('some data');
+        //reject('Some error');
+
+        });
+
+    };
+
+    getSomething().then((data)=>{  //fires when resolved
+        console.log(data);
+    },(error)=>{  //fires if we reject
+        console.log(error);
+    });
+
+
+    //writing above code in different way
+    getSomething().then(data =>{
+        console.log(data);
+    }).catch(err =>{
+        console.log(err);
+    });
+
+
+
+
+
+
+
+</script>
+</html>

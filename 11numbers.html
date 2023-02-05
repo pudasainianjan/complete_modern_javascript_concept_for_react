@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>NUMBERS IN JS</h1>
+    
+</body>
+<script>
+    
+    let radius = 10;
+    const pi= 3.14;
+
+    console.log(radius,pi);  //both same data type in js
+
+    //math operators  +,-,*,/,**(power of),%
+    console.log(10/2);
+    let result = radius % 3;  //gives us remainder
+    console.log(result);  //1
+
+    let powerDemo = pi * radius**2;  //area if circle pirsquare
+    console.log(powerDemo);
+
+    //order of operation  -B I(eg:**) D M A S  
+    let orderDemo = 5 * (10-3)**2; //10-3=7 then indecis **2 then miltiplication
+    console.log(orderDemo);
+
+    let likes = 10;
+    //likes = likes + 1;
+    //likes++;
+    //likes += 10;  //like + 10
+    //likes -= 5;
+    likes *= 10;
+    console.log(likes);
+
+
+    //NOT A NUMBER (NAN)
+    //eg: 5/hello, 5* hello
+    console.log(5*'hello');
+
+    let blogLike = 'the blog has '+likes + ' likes';
+    console.log(blogLike);
+
+
+
+
+
+
+
+
+
+</script>
+</html>

@@ -1,0 +1,62 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error{
+            padding: 10px;
+            color: crimson;
+            border: 5px dotted crimson;
+        }
+
+        .success{
+            padding: 10px;
+            color: limegreen;
+            border: 5px solid crimson;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title"> Challenge </h1>
+    <p>lorem error ipsum</p>
+    <p>lorem success ipsum</p>
+    <p>lorem ipsum lorem</p>
+    <p>lorem ipsum success</p>
+    <p>error lorem ipsum</p>
+    <p>lorem ipsum lorem</p>
+    <p>lorem ipsum error</p>
+    <p>success lorem ipsum</p>
+    
+</body>
+<script>
+    //for texts having error give class error and success give class success using dom
+    const paragraphs = document.querySelectorAll('p');
+    console.log(paragraphs);
+    paragraphs.forEach(paragraph=>{
+        //console.log(paragraph);
+        let currentInsideText = paragraph.textContent;  //paragraph.innerText can also be used but it also hides text which is hidden inside for eg:<span style:"display:none;">error</span> then it wont show error text as it only shows what is seen in webpage
+
+        //console.log(currentInnerText);
+        if(currentInsideText.includes('error')){
+            paragraph.setAttribute('class','error');
+        }
+        else if (currentInsideText.includes('success')) {
+            paragraph.classList.add('success');  //this also works and good practice so use this one
+            
+        }
+    });
+
+    //using toogle method  
+    const title = document.querySelector('.title');
+
+    title.classList.toggle('test');  //adds class test auomatically
+    title.classList.toggle('test');  //removes class test auomatically when toggled again like a switch
+    
+
+
+
+
+
+</script>
+</html>

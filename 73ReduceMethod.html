@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center;"> Reduce Method(array) </h1>
+    
+</body>
+<script>
+    //REDUCED METHOD 
+    //works bit differently form the filter and the map method
+    //it doesnt necessarily a new array instead it returns a single value which could be a number or string
+    //any values you want based in the value we iterate over array
+    
+    //for example how many of values in scores are above fifly for eg: 3 values are over fifty
+    const scores = [10,20,60,40,70,90,30];
+    
+    const result = scores.reduce((acc,curr)=>{  //reduce takes 2 params (accumulator,currentValuee)
+        if(curr>50){
+            acc++;
+        }
+        return acc;
+    },0);   //start accumulator from zero first time we fire callback function  -->accumulator remembers value each time we fire callback function
+
+console.log(`There are ${result} numbers greater than 50 in array ${scores}`);
+
+
+//EXAMPLE 2
+
+const scores1 =[
+    {player:'mario',score:50},
+    {player:'yoshi',score:30},
+    {player:'mario',score:70},   //,mario played again and got 70
+    {player:'crystal',score:60},
+    {player:'mario',score:70}, //mario played again
+
+];
+
+//we want to add all scores of mario
+const marioTotal = scores1.reduce((acc,curr)=>{
+    if(curr.player==='mario'){
+        acc += curr.score;
+    }
+    return acc;
+},0);
+
+console.log('Total score of mario ',marioTotal);
+
+
+
+
+
+
+</script>
+</html>

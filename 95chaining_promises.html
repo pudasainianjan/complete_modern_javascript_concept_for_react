@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    
+    const getTodos = (resource)=>{
+
+    return new Promise((resolved,rejected)=>{
+        const request = new XMLHttpRequest();
+    request.addEventListener('readystatechange',()=>{
+        if(request.readyState === 4 && request.status === 200){
+            const data = JSON.parse(request.responseText);
+            resolved(data);
+        }
+        else if(request.readyState === 4){
+            rejected('error to fetch data');
+        }
+    });
+    request.open('GET',resource);
+    request.send();
+    });
+    
+};
+//with those who return promises , then can be attatched 
+getTodos('ram.json').then(data=>{
+    console.log("Promise 1 resolved: ",data);
+    return getTodos('shyam.json');
+}).then(data=>{
+    console.log("promise 2 resolved: ",data)
+    return getTodos('hari.json');
+}).then(data=>{
+    console.log("promise 3 resolved: ",data);
+}).catch(err=>{  //one catch will work 
+    console.log("promise rejected: ",err);
+});
+
+
+
+</script>
+</html>

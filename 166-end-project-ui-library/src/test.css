@@ -1,0 +1,4 @@
+body{
+    background: orange;
+}
+/* we need to import it like the index file which is being bundled */

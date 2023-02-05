@@ -1,0 +1,55 @@
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            body{
+                background: #eeeeee;
+            }
+            form{
+                max-width: 200px;
+                margin: 40px auto;
+                background: white;
+                padding: 10px;
+            }
+
+            input{
+                display: block;
+                margin: 10px auto;
+                padding: 4px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 style="text-align: center;"> Submit Event Form </h1>
+        <form class="signup-form">
+            <input type="text" id="username" placeholder="username">
+            <input type="submit" value="submitted">
+        </form>
+        
+    </body>
+    <script>
+        //
+        const form = document.querySelector('.signup-form');
+        //const username = document.querySelector('#username');
+
+        form.addEventListener('submit',e=>{  //reacts to both click and enter event
+            //default action of page submit is page refresh   -->if we want to prevent this default action
+            e.preventDefault();  //default action refresh is prevented
+            //console.log(username.value);  //gives the value of  username
+            //or we can grab without having to use the separate username but by our form for eg:
+            alert(form.username.value);  //this is best practice
+
+            
+        });   
+    
+    
+    
+    
+    
+    
+    
+    </script>
+    </html>

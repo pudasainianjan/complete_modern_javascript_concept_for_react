@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Built In Objects</h2>
+    
+</body>
+<script>
+    
+    console.log(new Array(1,2,3,4,5));  //proto property here is pointing to the Array prototype(methods that  be used with Array)
+    //but at the very bottom of proto is pointing to the object
+    //this means we are also inheriting methods form the object prototype
+    //it means array is also inheriting methods of object
+
+    new Object();
+
+    new XMLHttpRequest  //see at bottom proto:parentClass   this means it is inheriting form parent class 
+
+    //this is how prototypal inheritance works even with built in objects
+
+</script>
+</html>

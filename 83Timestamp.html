@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center;"> TIMESTAMP AND COMPARISONS </h1>
+    
+</body>
+<script>
+    //timestamp
+    const before = new Date('February 1 2020 7:30:59');  //type date argument to give past date
+    const now = new Date();
+
+   // console.log(now.getTime(), before);
+   console.log(now.getTime(), before.getTime());  //here before.getTime() will provide milliseconds from jan 1 ,1970 - feb 1,2020...
+   const difference = now.getTime()  - before.getTime();
+   console.log(difference); 
+   //now converting these differences in to minutes or hours or days or..
+   //for eg: if we wanted to show our blog was created 20 days ago then we can compare it and convert
+
+   const mins = Math.round(difference / 1000 / 60); //1 sec = 1000 milliseconds
+   const hours = Math.round(mins / 60);
+   const days = Math.round(hours / 24);  
+   console.log(Math.round(7.49));
+
+    console.log(`The blog was written ${days} ago...`);
+
+    //converting timestamps into date objects
+    const timestamp = 1675938474990;  //just an integer and time difference betn jan 1,1970 to current
+    //now convert this integer into date object
+    console.log(new Date(timestamp));  //when pass number like this into date object, it converts that timestamp into the date obj
+
+
+
+
+
+
+
+</script>
+</html>

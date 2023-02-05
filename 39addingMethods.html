@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>  Adding Methods</h1>
+    
+</body>
+<script>
+    //
+    let user = {
+    name : 'Crystal',   //key: 'value' -->one of the property of user object
+    age: 30,
+    email: 'crystal@gmail.com',
+    location: 'france',
+    blogs: ['10 things to do in life','how to make tea'],
+    login: function (){         //here login is the method
+        console.log('User logged in'.toLocaleUpperCase());   //string.methodOfString()
+    },
+    logout: () =>{   //use normal function instead of arrow function here
+        console.log('User logged out!',this);   //Do not use arrow function here because it is not reffering to the object but to window
+    },
+    showBlogs: function(){
+        //console.log(blogs);   //t access blogs here we need "this" keyword    //this keyword is the context object and represents the context in which the current code is executed 
+        //console.log("This Inside user ",this);   //this refers to the object here
+        //console.log(this.blogs);
+        console.log('this user has written following blogs:');
+        this.blogs.forEach(blog =>{
+            console.log(blog);
+        });
+    },
+    //even easy way to define methods
+    signup(){
+        console.log("hello : and function keyword can also be removed ");
+    }
+};
+
+user.login();    //similar to string.toUpperCase();    
+
+user.logout();   //here this refer window and inside louout arrow function used will refer to this where the funcion called or invoked
+
+user.showBlogs();
+
+user.signup();   //without function keyword :good practice
+
+
+//*ABOUT THIS KEYWORD
+console.log("This outside ",this);   //global context here so represnets window object
+
+
+/*so use  without arrow function in order to refer to this of particular object it is in */
+
+
+
+
+
+
+
+
+</script>
+</html>

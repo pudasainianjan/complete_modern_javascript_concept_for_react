@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symbols</title>
+</head>
+<body>
+
+<script>
+//SYMBOL                            -->PRIMITIVE TYPE
+    //symbols are completely unique
+    //no two symbols can ever equal to each other
+
+    const symbolOne = Symbol();  //NOTE: we're not creating obj here 
+    const symbolTwo = Symbol(); 
+
+    // const symbolTwo = Symbol('some name to ideentify symbol');  
+
+
+    console.log(symbolOne,symbolTwo,typeof(symbolOne)); //sym one and two look identical but are different 
+
+    console.log(symbolOne == symbolTwo);  //false
+
+    //symbol can be used as keys or property names in object
+
+    const person = {};
+    person.age =30;
+    person['work'] = 'student';
+    person['work'] = 'teacher';
+    person[symbolOne]= 'ram';
+    person[symbolTwo]='hari';
+
+    
+    console.log(person);
+
+
+    
+
+
+</script>
+</body>
+</html>

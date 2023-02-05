@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>  Arrow Functions</h1>
+    
+</body>
+<script>
+    //it is shorter way to write functions
+    // const calcArea = radius =>{   //wehn we have only one parameter we cam make (radius) to radius only (remove paranthesis)
+
+    //     return 3.14 *radius ** 2;
+    // };
+
+     
+
+
+    //but when we have only single thing to return this can be written as
+    const calcArea= radius => 3.14*radius**2;
+    const hello =() => 'hello there!';
+    console.log(hello());
+
+    const area = calcArea(5);
+    console.log('The area of circle is ',area);
+
+
+    //NOTE! another major difference between regular and arrow function is: BINDING OF THIS KEYWORD
+    //when it comes to "this" keyword there is some major advantage of arrow functions
+
+    const bill = (products, tax) =>{
+        let total=0;
+        for(let i=0; i<products.length; i++){
+            total += products[i]+ products[i]*tax;
+        }
+        return total;
+    };
+
+    console.log('total is ',bill([10,15,30],0.2));
+
+
+
+
+
+
+
+</script>
+</html>

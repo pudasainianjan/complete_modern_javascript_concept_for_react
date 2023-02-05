@@ -1,0 +1,69 @@
+    <!-- CONNECTING TO FIREBASE: VERY INITIAL STAGE -->
+    <!-- * in order to connect to firebase we need to copy the code snippet from firebase to our application -->
+    <!-- todo: project_overview > click on </> icon copy code -->
+    <!--* api key in snippet if identifier of our firebase database app  -->
+    <!--* at bottom of snipppet firebase.initializeApp(firebaseConfig) sets up firebase to connect backend in our frontend  -->
+
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+            <title>Document</title>
+        </head>
+        <body>
+            <h1>Databases</h1>
+            <div class="container my-5">
+                <h2>Recipes</h2>
+                <ul>
+                    <li>Mushroom pie</li>
+                    <li>Veg chicken</li>
+                </ul>
+                <form>
+                    <label for="recipe">Add a new recipe</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="recipe" required>
+                        <div class="input-group-append">
+                            <input type="submit" value="add" class="btn btn-outline-secondary">
+                        </div>
+                    </div>
+                </form>
+                <button class="btn btn-danger btn-lg my-2 disabled">Unsubscribe To Real Time Changes</button>
+            </div>
+
+
+            <!-- setting ou our firebase below -->
+
+            <!--! pasting the firebase code before sandbox.js because we use it later in our script  -->
+            <!-- The core Firebase JS SDK is always required and must be listed first -->
+            <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-firestore.js"></script>  <!--! loading firestore library...if this removed all libraries will be loaded which we may not need -->
+
+            <!-- TODO: Add SDKs for Firebase products that you want to use
+                https://firebase.google.com/docs/web/setup#available-libraries -->
+            <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-analytics.js"></script>
+
+            <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyB9sbFdjcRIpoPGJ9ZEhR5WDlcDNQg9mQE",
+                authDomain: "myapp-35664.firebaseapp.com",
+                databaseURL: "https://myapp-35664.firebaseio.com",
+                projectId: "myapp-35664",
+                storageBucket: "myapp-35664.appspot.com",
+                messagingSenderId: "794358965160",
+                appId: "1:794358965160:web:835889ed0e3d085096f39d",
+                measurementId: "G-10FJPHXNY3"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);  //setting up our firebase app 
+            firebase.analytics();
+
+            /*end of firebase code snippet*/
+
+            //initializing our database:
+            const db = firebase.firestore();  //initialize our firestore connection and stores connection inside const db...so everytime we interact with database we use db constant
+            </script>
+            <script src="sandbox.js"></script>
+        </body>
+        </html>

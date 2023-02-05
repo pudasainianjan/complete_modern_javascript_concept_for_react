@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center;"> CALLBACK HELL </h1>
+    
+</body>
+<script>
+
+const getTodos = (resource,callback) =>{
+
+const request = new XMLHttpRequest();
+
+request.addEventListener('readystatechange',()=>{
+    
+    if(request.readyState === 4 && request.status === 200){  //only fires when readystate is 4 and get okay response
+        const data = JSON.parse(request.responseText);   //converts json string into js object
+        callback(undefined,data);  //now data is array of objects
+    }
+    else if(request.readyState === 4){
+        callback('Could not fetch data',undefined);
+    }
+});
+
+
+request.open('GET',resource); //fetching from our local json
+request.send();
+};
+
+
+//we nested callbacks because we want in order because this is in async
+getTodos('92making_JSON.json',(err,data) => {  
+    console.log(data);  //data of shaun json1
+    getTodos('92making_JSON2.json',(err,data)=>{
+        console.log(data);
+        getTodos('92making_JSON3.json',(err,data)=>{
+            console.log(data);
+        });
+    });
+});
+
+//we use promises to make this hell more nicer and more readable
+
+
+
+
+
+
+
+
+</script>
+</html>

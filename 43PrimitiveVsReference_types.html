@@ -1,0 +1,30 @@
+In javascript:
+
+
+PRIMITIVE types are:    -->variable stored on stack (less space available)
+numbers 
+string
+booleans 
+null
+undefined
+symbols
+
+
+REFERENCE types are:   -->object stored on heap  (more space available)
+-all types of objects types
+ -object literals
+ -arrays
+ -functions
+ -dates
+ -all other objects (eg:math objects)
+
+
+ what is the difference between primitive types and reference typee??
+ -it all about how they are stored and used in memory
+
+
+ eg:
+ const userOne = {name:'Shaun',score:100};
+ const userTwo = userOne;   //both will get same pointer from stack of one object stored in heap 
+ const userOne = {name:'Shaun',score:50}; //now userTwo will also get changed as they refer to same pointer
+ //so we dont make a copy of actual data in reference type but a copy of pointer of  objects

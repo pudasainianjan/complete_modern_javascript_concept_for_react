@@ -1,0 +1,23 @@
+.login-modal{
+    display: none;  /*default hidden*/
+    position: relative;
+    background-color: #fff;
+    width: 70rem;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 0 .7rem rgba(0, 0, 0, .3);
+    border-radius: 0 0 1rem 1rem;  /*top-left top-right bottom-right bottom-left corners*/
+}
+.login-modal i{
+    position: absolute;
+    top:1rem;
+    right: 2rem;
+    font-size: 1.3rem;
+    color: red;
+    cursor: pointer;
+}
+.login-modal p{
+    margin: 2rem 1rem 0 1rem;
+    font-size: 1.6rem;
+    color: #868383;
+}

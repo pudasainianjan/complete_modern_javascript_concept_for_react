@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>TEMPLATE STRING</h1>
+    
+</body>
+<script>
+    //inject vars into the string without haviung messy + sign
+    const title = 'Best reads of 2019';
+    const author = 'Mario';
+    const likes= 30;
+
+    //concatination way  -->bit messy
+    let concatDemo = 'The blog called '+title+ ' by '+author+ ' has '+likes+' likes';
+    console.log(concatDemo);
+
+    //template string way --> allows to inject vars directly into a string
+    let templateDemo = `The blog called ${title} by ${author} has ${likes} likes`;
+    console.log(templateDemo);
+
+    //creating html temolates
+    let html = `
+    <h2>${title} </h2>
+    <p>By ${author} </p>
+    <span>This blog has ${likes} likes</span>
+    `;
+    console.log(html);  //this is html string -->this will help to inject dynamic contents
+    
+
+
+
+
+</script>
+</html>

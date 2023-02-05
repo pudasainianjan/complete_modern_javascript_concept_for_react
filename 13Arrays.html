@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ARRAYS</h1>
+    
+</body>
+<script>
+    //object data type in javascript
+    //collection of things like strings,numbers
+
+    let ninjas= ['shaun','rayu','chun-li'];  //all three names in one single variable
+    console.table(ninjas);
+    console.table(ninjas[2]);
+    ninjas[1]= 'ken';
+    console.log(ninjas[1]);
+
+    let ages = [20,25,30,35];
+    console.table(ages[2],ages[3]);
+
+    //length -->how many elements inside
+    console.log('length of anjan is ','anjan'.length);
+
+    //ARRAY METHODS  */
+
+    let result = ninjas.join(',');  //commas in between
+    console.log(result);  
+
+
+    let indexOFDemo = ninjas.indexOf('chun-li');
+    console.log(indexOFDemo);
+
+
+    let concatDemo = ninjas.concat(['jen','hen']);
+    console.log(concatDemo);  //concatinated array
+
+    //push and pop array
+    let pushPopDemo  = ninjas.push('ram');
+    console.log(pushPopDemo); //returns new length
+    console.log('Pushed Ram ',ninjas);
+    
+    console.log(`popped from array is ${ninjas.pop()} and the new array is ${ninjas}`);
+
+
+
+
+
+
+
+
+</script>
+</html>

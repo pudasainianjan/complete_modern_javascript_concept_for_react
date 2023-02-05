@@ -1,0 +1,29 @@
+{
+  "name": "chapter_19",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "babel": "node_modules/.bin/babel ./src/index.js -w -o ./dist/assets/bundle.js",
+    "commentBabel": "//we aill incorporate babel into webpack config so we can remove it now",
+    "webpack": "node_modules/.bin/webpack",
+    "commentWeebpack": "removed -w flag because we only want to run  it at last to build final application not everytime in development mode  as we are listening to serve for dev mode....can remove it as we added build",
+    "build": "node_modules/.bin/webpack --mode production",
+    "commentBuild": "//renamed above into build as we only want to run at last at last, we want this in production  mode ",
+    "serve": "webpack-dev-server --mode development",
+    "commentServe": "// we want this in development mode ....without specified --mode development, it may show big yellow warning"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "babel-loader": "^8.1.0",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3"
+  },
+  "dependencies": {
+    "webpack-dev-server": "^3.2.1"
+  }
+}

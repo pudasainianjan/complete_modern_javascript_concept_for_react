@@ -1,0 +1,74 @@
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            body{
+                background: #eeeeee;
+            }
+            form{
+                max-width: 200px;
+                margin: 40px auto;
+                background: white;
+                padding: 10px;
+            }
+
+            input{
+                display: block;
+                margin: 10px auto;
+                padding: 4px;
+            }
+        </style>
+    </head>
+    <body>
+        <h3 style="text-align: center;"> Using Regular Expressions to Validate forms(matching patterns) </h3>
+        <form class="signup-form">
+            <input type="text" id="username" placeholder="username">
+            <input type="submit" value="submitted">
+        </form>
+        
+    </body>
+    <script>
+        //
+        const form = document.querySelector('.signup-form');
+        //const username = document.querySelector('#username');
+
+        form.addEventListener('submit',e=>{  //reacts to both click and enter event
+            //default action of page submit is page refresh   -->if we want to prevent this default action
+            e.preventDefault();  //default action refresh is prevented
+            //console.log(username.value);  //gives the value of  username
+            //or we can grab without having to use the separate username but by our form for eg:
+            alert(form.username.value);  //this is best practice
+
+    
+        });   
+
+        //testing RegEx
+        const username = 'anjana';
+        const pattern = /[a-z]{6,15}/  //means it contains a-z and 6,15 character long...use /^   $/ for only one final block without spaces
+
+        let result = pattern.test(username);    //method test on a pattern....test is regEx method   //returns true is passes test or false if false
+        //console.log('Result is ',result);
+        if(result){
+            console.log('regex test passes :)');
+        }
+        else{
+            console.log('regex test failed :(');
+        }
+
+        let result1 = username.search(pattern);  //returns the positon of array in which pattern matches
+        console.log(result1);  //only returns 0 and -1(not match) as if we used /^  &/
+        //console.log(result1);  //returns position 0 to so on...
+        
+
+    
+    
+    
+    
+    
+    
+    
+    </script>
+    </html>

@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Objects Inside Arrays </h1>
+    
+</body>
+<script>
+    //real life example when we have a movie website with collection movies and each object can be a single movie
+    //common format we use
+    /*
+    const blogs = [
+        {title: 'why mac is better than windows?', likes: 30 },
+        {title:'10 things to do in life',likes:50}
+    ];
+    */
+
+    let user = {
+    name : 'Crystal',   
+    age: 30,
+    email: 'crystal@gmail.com',
+    location: 'france',
+    blogs: [
+        {title: 'why mac is better than windows?', likes: 30 },
+        {title:'10 things to do in life',likes:50}
+    ],
+    login(){         
+        console.log('User logged in'.toLocaleUpperCase());   
+    },
+    logout(){   
+        console.log('User logged out!',this);   
+    },
+    showBlogs(){
+        
+            console.log('this user has written following blogs:');
+            this.blogs.forEach(blog =>{
+            console.log(blog.title, blog.likes);
+        });
+    },
+    
+    
+};
+
+    
+    user.showBlogs();
+    
+
+
+
+
+
+
+
+</script>
+</html>

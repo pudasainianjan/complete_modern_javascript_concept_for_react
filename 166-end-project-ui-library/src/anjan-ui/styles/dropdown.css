@@ -1,0 +1,31 @@
+.dropdown .trigger{
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    position: relative;
+    cursor: pointer;
+  }
+  .dropdown .trigger::after{            /*add content after the text inside triggeer*/
+    content: ">";
+    display: inline-block;
+    position: absolute;
+    right: 15px;
+    transform: rotate(90deg) scale(0.5, 1);
+    font-weight: bold;
+    transition: transform 0.3s;
+  }
+  .dropdown .trigger.active::after{
+    transform: rotate(-90deg) scale(0.5, 1);
+  }
+  .dropdown .content{
+    display: none;
+    
+  }
+  .dropdown .content.active{
+    display: block;
+    animation: slide-down .5s ease-out;
+  }
+
+  @keyframes slide-down {
+    0% { opacity: 0; transform: translateY(100%); }
+    100% { opacity: 1; transform: translateY(0); }
+}

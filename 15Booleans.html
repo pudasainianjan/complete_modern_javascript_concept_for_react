@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> BOOLEANS   </h1>
+    
+</body>
+<script>
+    //booleans and comparisons
+    console.log(true,false,"false");
+
+    //methods can return booleans
+    let email = 'anjan@gmail.com';
+    let names = ['mario','luigi','toad'];
+    let result =names.includes('luigi');  //inside array
+    //let result = email.includes('@');  //inside string
+    console.log(result);
+
+    //comparison operators
+    let age = 25;
+    //console.log(age == 26);
+    //console.log(age == 25);
+    //console.log(age != 25);
+    //console.log(age <= 26);
+    //console.log(age <= 26);
+    //console.log(age >= 25);
+
+    let name = 'shaun';
+    console.log(name == 'shaun');
+    console.log(name == 'Shaun');
+    console.log(name >'crystal'); //true -->because of alphabet order
+    console.log(name > 'Shaun');  //lowercase letter letters are greater than uppercase letters
+    console.log(name > 'Zhaun');
+
+    //NOTE!!   == means loose euality where values type is not considered
+    //   ===  means strictly
+
+    /*  STRICTLY EQUAL OR STRICT COMPARISONS */
+    console.log(age == '25'); //true -->here string is converted to number(type conversion) and compared
+    console.log(age === '25'); //false here datatype is seen 
+    console.log(age !== '25'); //true becase not eauql 
+
+
+
+
+
+
+
+
+</script>
+</html>

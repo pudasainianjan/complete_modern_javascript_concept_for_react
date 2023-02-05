@@ -1,0 +1,62 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>  Array Methods </h1>
+    
+</body>
+<script>
+    //all the methods cycles through arrays and works differently
+    //five common array methods and their use is below:
+    /* 
+    filter method
+    map method
+    reduce method
+    find method
+    sort method
+    */
+
+
+    /* FILTER METHODS */
+    //when we have to retrieve some data from a database and filer out certain items from that array based on certain condition
+    //filter iterates an array performs the check in each item in array inside callback function and if check passes, then it keeps item inside filtered array, if doesnt pass, filter out or remove from array
+
+    //for example:
+    const scores = [10,30,15,25,50,40,5];
+
+    const filteredScores =  scores.filter(score=>{    //here score is individual item in array
+       // return true;   //keeps item in array if pass
+        //return false;  //filter out each items so empty array
+    
+        //filter out any score which is not over 20
+        return score > 20;   //if score is 10 it evaluates false
+
+
+    });
+
+    console.log('Scores above 20 are: ',filteredScores);
+
+
+    const users = [
+        {name: 'trushaun', registered: true},
+        {name: 'falsita', registered: false},
+        {name: 'falram', registered: false},
+        {name: 'trump', registered: true},
+    ];
+    //user filter method to get register method
+    const registeredUsers = users.filter ( user=> user.registered );  //if true directly registers   //uer ko property register
+    
+
+    console.log('Registered users are: ',registeredUsers );
+
+
+
+
+
+
+
+</script>
+</html>

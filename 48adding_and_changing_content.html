@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="page-title">  Adding and changing text and html inside elements</h1>
+
+    <div>
+        <p>hello, world</p>
+        <p>lorem ipsum</p>
+        <p class="error">this is an error message</p>
+    </div>
+
+    <div class="content">
+        <p>this is the content in p and content class</p>
+    </div>
+    
+</body>
+<script>
+    //
+    const para = document.querySelector('p');
+    //inner text to set text directly 
+    console.log(para.innerText);   //gives the innertext of that element  -->as it is property not methold we dont use parenthesis like this -->()
+    //updating that text
+    para.innerText = 'ninjas are awesome';  //overrides old text of p
+    //para.innerText += ' ninjas are awesome';  //appending
+    //or we can append to the text also like --> para.innerText += 'ninjas are awesome';
+
+    //several items changing
+    const paras = document.querySelectorAll('p');  // p tags
+    paras.forEach(para=>{
+        console.log(para.innerText);  //gives individual paragraph inner texts
+        para.innerText += ' new text appended';
+    });
+
+
+    //WHAT IF WE WANT TO CHANGE HTML
+    const content = document.querySelector('.content');
+    console.log(content.innerHTM);
+    //content.innerHTML = '<h2>THIS IS A NEW h2 added</h2>';   //replaces the previous conteent
+    content.innerHTML += '<h2>THIS IS A NEW h2 added</h2>';
+
+
+    const people = ['ram','chau','chew'];
+    people.forEach(person =>{
+        content.innerHTML += `<p>${person}</p>`;
+    });
+
+
+
+
+
+
+
+</script>
+</html>

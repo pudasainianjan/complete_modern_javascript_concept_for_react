@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center;"> HTTP REQUEST AND MAKING REQUEST </h1>
+    
+</body>
+<script>
+    //Introduction to http req.
+/*  make http request to get data from server  
+    we make the requests to API endpoints  -->pparticular server exposes to us so we can use their api ...for eg:www.musicapi.com/artist/moby
+    API sends data as a response when request is made to the endpoint
+    we typically get data in a json format
+
+    //json placeholder website used for api
+    //we generally want to get data we make get request, and sometimes we make post req for getting like username / password
+    */
+
+    //MAKING A REQUEST WITH JS CODE
+    
+    const request = new XMLHttpRequest(); //creates req. object  //this xml represents old data format we used before json arrived but this can req. can work with any kind of data format now like xml,json,plain text,etc
+
+    request.addEventListener('readystatechange',()=>{  //fires everytime the state change in the request ....state change means request is going through different phases(4 total)
+    //console.log(request,request.readyState); //everytime readystatechange it will log to console
+    if(request.readyState === 4){
+        console.log(request.responseText);  //property contains response data
+    }
+       
+   })
+   //ready state 0 when open has not called
+    
+    request.open('GET','https://jsonplaceholder.typicode.com/todos/');  //readystate 1 when called open    //open method takes 2 arguments ('typeOfRequest',what is the endpoint we want data from?)
+
+    request.send(); //readystate 2 when send()
+    //readystate 3 when downloading some response text
+    //readystate 4 when operation is complete  -->here we receive data and do something
+
+   
+    
+
+
+
+
+
+
+
+
+</script>
+</html>

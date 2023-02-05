@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>  </h1>
+    
+</body>
+<script>
+    
+    //pattern 1
+    /*for(let i=5; i>0;i--){
+    
+    for(let j=1; j<=i; j++){
+        document.write('*');
+    }
+    document.write("<br>");
+
+    }*/
+
+  //Challenge 2 (pyramid)
+  function displayPyramid(n) {
+  for (var i = 0; i < n; i++) {
+    var str = '';
+    for (var j = 1; j < n-i; j++) {
+      str = str + ' ';
+    }
+    for (var k = 1; k <= (2*i+1); k++) {
+      str = str + '*';
+    }
+    console.log(str);
+  }
+}
+
+displayPyramid(5);
+
+
+
+
+
+</script>
+</html>

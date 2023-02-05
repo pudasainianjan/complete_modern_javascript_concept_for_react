@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>String Methods</h1>
+    
+</body>
+<script>
+    //methods are just functions that belong to specific obj or obj type
+    let email= 'anjan@gmail.com.us';
+
+    let result = email.lastIndexOf('n');  //position of last n inside the string
+    console.log('last index of n in '+email+' is ',result);
+
+    //slice
+    let sliced = email.slice(0,5);  //from, to index
+    console.log("sliced from 0 -5 "+sliced);
+
+    //substring
+    let subString = email.substr(5,8); //from position 5 to 8 here 8 means 8 character not 8 index
+    console.log(subString);
+
+    //repllace
+    let repladecString = email.replace('a','aa'); //first a is replaced by aa
+    console.log(repladecString);
+
+    
+
+
+
+
+
+</script>
+</html>

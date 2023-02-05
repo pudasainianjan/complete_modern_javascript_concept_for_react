@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+        const getIDs = new Promise((resolve,reject)=>{
+        setTimeout(() => {
+            resolve([231,213,432,544,568]); //return when setTimeout finishes //resolvee marks the promise as fulfilled          
+        },1500);
+    });
+
+    const getRecipe = recID => {
+        return new Promise((resolve,reject)=>{
+                setTimeout(ID => {
+                    const recipe = {title: 'fresh tomato',publisher:'jonas'};
+                    resolve(`${ID}: ${recipe.title}`)
+                }, 1500,recID);
+                
+        });
+    };
+
+    const getRelated = publisher =>{
+        return new Promise((resolve,reject)=>{
+            setTimeout(publisher => {
+                const recipe = {title: 'pizza',publisher:'jonas'};
+                resolve(`${publisher}: ${recipe.title}`);
+            }, 1500,publisher);
+        });
+    };
+
+    // getIDs
+    // .then(IDs=>{      //this argument here will be the result of the successful promise
+    //     console.log(IDs);
+    //     return getRecipe(IDs[2]);   //will return a promise
+    // })
+    // .then(recipe =>{
+    //     console.log(recipe);
+    //     return getRelated('jonas');
+    // })
+    // .then(recipe =>{
+    //     console.log(recipe);
+    // })
+    // .catch(error=>{
+    //     console.log(error);
+    // });
+
+    //now getting promisees using async await
+    async function getRecipeAW(){       //async always returns a promise so tack .then()
+        const IDs = await getIDs;    //await will stop execution until the promise is fulfilled
+        //ids is resolved value from getIDs promise
+        console.log(IDs);
+        const recipe = await getRecipe(IDs[2]);
+        console.log(recipe);
+        const related = await getRelated('jonas');
+        console.log(related);
+
+        return recipe;
+    }
+    getRecipeAW().then(result => console.log(`${result} is this`));
+    
+</script> 
+</body>
+</html>

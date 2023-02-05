@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Foreach Method And Callbacks </h1>
+    
+</body>
+<script>
+    //callbacks and foreach
+    //WHEN WE PASS A FUNCTIION ITSELF AS A ARGUMENT OF FUNCTION THEN THE FUNCTION WE ARE PASSING IS THE CALLBACK FUNCTION
+    const myFunc = (callbackFunc) =>{ //takes a function as a parameter
+        //do soomething
+        let value = 50;
+        callbackFunc(value);
+    };
+
+    /*
+    myFunc(function(value){     //just calling the function as a argument function
+        //do something
+        console.log(value);
+    } );
+    */
+
+    //converting above function to arrow function
+    myFunc(value =>{    //defining a callback function as argument
+        //do something
+        console.log(value);
+    });   //calling here
+
+
+
+    //FOREACH
+    let people = ['mario','ram','sita','john','chau'];
+
+
+    /*
+    people.forEach((person,index)=>{   //for each here is built in array methods which iterates over an array and expects an argument as a callback function
+        //console.log('something');  //for each element it calls something so 5 times
+        console.log(index,person);  //it iterates through array and fires a callback function to the foreach method for each individual item in the array and we get access to all elements in the array
+
+    });
+    */  //instead of this we can do this in better way:
+
+    const logPerson =(person,index)=>{
+        console.log(`${index}-hello ${person}`);
+    }
+
+    people.forEach(logPerson);  //just splitted function or it can de directly given into argument like above
+
+
+
+
+
+
+
+
+</script>
+</html>

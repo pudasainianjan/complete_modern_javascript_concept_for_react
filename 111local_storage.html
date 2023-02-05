@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>storing and getting data</h2>   
+</body>
+<script>
+
+//store data in local storage
+localStorage.setItem('name','mario')//takes two arguments key:value
+localStorage.setItem('age',50);
+
+
+//get data from local storage
+let name = localStorage.getItem('name');
+let age = localStorage.getItem('age');
+console.log(name,age);
+
+//updating data
+localStorage.setItem('name','ram') //just overrides
+
+
+//deleting items from localstorage
+localStorage.removeItem('age');  //age is removed
+localStorage.clear();  //clears all storage this app has
+
+
+
+
+
+
+
+</script>
+</html>

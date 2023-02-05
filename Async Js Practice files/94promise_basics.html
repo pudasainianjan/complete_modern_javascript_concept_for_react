@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    
+    const getTodos = (resource)=>{
+
+    return new Promise((resolved,rejected)=>{
+        const request = new XMLHttpRequest();
+    request.addEventListener('readystatechange',()=>{
+        if(request.readyState === 4 && request.status === 200){
+            const data = JSON.parse(request.responseText);
+            resolved(data);
+        }
+        else if(request.readyState === 4){
+            rejected('error to fetch data');
+        }
+    });
+    request.open('GET',resource);
+    request.send();
+    });
+    
+}
+
+getTodos('ram.json').then(data=>{
+    console.log("Promise resolved: ",data);
+}).catch(err=>{
+    console.log("promise rejected: ",err);
+});
+
+
+
+
+
+
+//ram,shyam and hari data fetched in order..but we can use promises to make it even simpler
+//promise example
+// const getSomething = ()=>{
+
+//     return new Promise((resolved,rejected)=>{ //either resolved or rejected
+//     //fetch something
+//     resolved('hello world');  //success
+//    // rejected('error something is wrong');
+    
+//     });
+// };
+
+// getSomething().then(data=>{
+//     console.log(data);
+// },(err)=>{
+//     console.log(err);
+// });
+
+// getSomething().then(data=>{
+//     console.log(data);
+// }).catch(err=>{
+//     console.log(err);
+// });
+
+
+</script>
+</html>

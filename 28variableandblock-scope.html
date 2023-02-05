@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>  Variables and Block scope</h1>
+    
+</body>
+<script>
+    //area in which variable value is relevant
+    //let age = 30;   //global scope  -->accessed anywhere in the file
+    
+    if(true){
+        //age = 40;   //access global and change on global also
+        let age = 40;   //local scope and can be redefined and not change in global age
+        let name='anjan';  //local inside this code block scope 
+        console.log('Inside Code Block', age,name);
+    
+
+    if(true){
+        let age = 50;
+        console.log('inside 2nd code block ', age);
+        var greet = 'Namaste!';   //var ignores block scope
+    } 
+}
+
+    console.log('Outside Code Block', age,name,greet);  //local scope name cant be accessed here //var greet can be get here as it ignores block scope
+
+    
+
+
+
+
+
+
+
+</script>
+</html>

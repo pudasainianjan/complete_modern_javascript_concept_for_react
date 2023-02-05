@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>  Callback in action</h1>
+    <ul class="people"></ul>
+    
+</body>
+<script>
+    //get a reference to the 'ul'
+    const ul =document.querySelector('.people');
+
+    let html='';
+
+    const people= ['mario','ram','sita','john','chauu'];
+    people.forEach((person)=>{
+        //create html template
+        html += `<li style="color: purple">${person}</li>`;
+
+    });
+
+    console.log(html);
+    ul.innerHTML = html;   //palces htmlinside the ul
+
+
+
+
+
+
+
+</script>
+</html>

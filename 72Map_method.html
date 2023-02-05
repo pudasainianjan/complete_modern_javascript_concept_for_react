@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>  Map Method(array)</h1>
+    
+</body>
+<script>
+    //2. MAP METHOD
+    //useful method, takes an array and maps into a completely new array
+    //iterates array and returns updated value for each item in the array and pushes that updated value into a new array
+    //non descructive method like filter method means it doesnt directly change the original array
+
+
+    const prices = [10,30,15,25,50,40,5];
+
+    const salePrices = prices.map((price)=>{
+        return price / 2;
+    });
+    console.log('New Prices: ',salePrices);
+
+
+    //
+    const products = [
+        {name: 'gold star', price:20},
+        {name: 'mushroom', price:40},
+        {name: 'green shells', price:30},
+        {name: 'banana skin', price:10},
+        {name: 'red shells', price:50},
+    ];
+
+    //products over price 30 should be halfed
+    const halfedPrice = products.map(product=>{   
+        // if(product.price > 30){
+        //     return product.price /= 2;
+        // }
+        // else{
+        //     return product.price;
+        // }  //dont return array like that as that will directly affect original array {descructive} insted return object like below:
+
+        if(product.price > 30){
+            return {name: product.name, price: 'halfed price:'+ product.price/2}
+        }
+        else{
+            return product;
+        }
+        
+    });
+    console.log('Only Price over 30 is halfed ',halfedPrice);
+    
+
+
+
+
+
+
+</script>
+</html>
